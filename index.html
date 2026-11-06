@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hongjia Zhu 朱宏佳 — Institute for Economic and Social Research, Jinan University</title>
+<meta name="description" content="Hongjia Zhu, Tenured Associate Professor at the Institute for Economic and Social Research, Jinan University. Research interests: urban economics, environmental economics.">
+<link rel="canonical" href="https://zhuhjecon.com/">
+<style>
+  :root{
+    --paper:#eef1f4;
+    --ink:#0a0a0a;
+    --ink-2:rgba(10,10,10,.75);
+    --ink-3:rgba(10,10,10,.55);
+    --ink-4:rgba(10,10,10,.38);
+    --line:#dbe0e6;
+    --ease:cubic-bezier(0.22,1,0.36,1);
+    --serif:"Georgia","Times New Roman","Songti SC","Noto Serif SC","SimSun",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  ::selection{background:var(--ink);color:var(--paper)}
+
+  .wrap{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    max-width:1180px;
+    margin:0 auto;
+    min-height:100vh;
+  }
+
+  /* ---------- 左侧栏 ---------- */
+  aside{
+    padding:4.5rem 3rem 3rem 3rem;
+    border-right:1px solid var(--line);
+    position:relative;
+  }
+  .side-inner{position:sticky;top:4.5rem}
+  .name-zh{
+    font-family:var(--serif);
+    font-size:2.1rem;
+    font-weight:700;
+    letter-spacing:.06em;
+    line-height:1.2;
+  }
+  .name-en{
+    font-family:var(--serif);
+    font-size:1.05rem;
+    color:var(--ink-3);
+    letter-spacing:.04em;
+    margin-top:.35rem;
+  }
+  .role{
+    margin-top:1.6rem;
+    font-size:.92rem;
+    color:var(--ink-2);
+    line-height:1.9;
+  }
+  .role .en{color:var(--ink-3);font-size:.85rem}
+  nav{margin-top:2.6rem}
+  nav a{
+    display:block;
+    padding:.45rem 0;
+    font-size:.8rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    text-decoration:none;
+    transition:color .3s var(--ease);
+  }
+  nav a .zh{
+    text-transform:none;
+    letter-spacing:.1em;
+    margin-left:.5em;
+    font-size:.85em;
+  }
+  nav a:hover{color:var(--ink)}
+  .contact-block{
+    margin-top:2.6rem;
+    padding-top:1.6rem;
+    border-top:1px solid var(--line);
+    font-size:.85rem;
+    color:var(--ink-3);
+  }
+  .contact-block .email-obf{
+    color:var(--ink);
+    font-family:var(--serif);
+    letter-spacing:.02em;
+    user-select:all;
+  }
+
+  /* ---------- 右侧主内容 ---------- */
+  main{padding:4.5rem 3.5rem 4rem 4rem;max-width:760px}
+  section{margin-bottom:4.2rem}
+  .sec-label{
+    font-size:.78rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-4);
+    margin-bottom:1.4rem;
+    display:flex;
+    align-items:baseline;
+    gap:.9em;
+  }
+  .sec-label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+  .sec-label .zh{font-size:.95em;letter-spacing:.12em}
+
+  .intro p{margin-bottom:1.1em;color:var(--ink-2)}
+  .intro p:last-child{margin-bottom:0}
+  .fields{
+    margin-top:1.4rem;
+    font-family:var(--serif);
+    font-size:1.05rem;
+    color:var(--ink);
+  }
+  .fields-label{
+    font-family:var(--sans);
+    font-size:.72rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-4);
+    margin-bottom:.55em;
+  }
+  .fields span + span::before{
+    content:"##";
+    margin:0 .7em;
+    color:var(--ink);
+    font-weight:600;
+  }
+
+  /* 论文列表 */
+  ol.pubs{list-style:none;counter-reset:pub}
+  ol.pubs li{
+    counter-increment:pub;
+    position:relative;
+    padding:1.05rem 0 1.05rem 3.2rem;
+    border-bottom:1px solid var(--line);
+    font-family:var(--serif);
+  }
+  ol.pubs li::before{
+    content:counter(pub,decimal-leading-zero);
+    position:absolute;
+    left:0;top:1.35rem;
+    font-family:var(--sans);
+    font-size:.75rem;
+    letter-spacing:.08em;
+    color:var(--ink-4);
+  }
+  .pub-title{font-size:1.02rem;line-height:1.6;color:var(--ink)}
+  .pub-meta{
+    margin-top:.3rem;
+    font-size:.88rem;
+    color:var(--ink-3);
+    line-height:1.7;
+  }
+  .pub-meta .journal{color:var(--ink);font-style:italic}
+  .award{
+    display:inline-block;
+    margin-top:.45rem;
+    font-family:var(--sans);
+    font-size:.72rem;
+    letter-spacing:.08em;
+    color:var(--ink);
+    border:1px solid var(--ink);
+    padding:.15em .7em;
+    border-radius:10em;
+  }
+  ol.pubs.working{counter-reset:wp}
+  ol.pubs.working li{counter-increment:wp}
+  ol.pubs.working li::before{content:"W" counter(wp,decimal-leading-zero)}
+
+  /* 项目 / 经历 / 教育 */
+  ul.rows{list-style:none}
+  ul.rows li{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:2rem;
+    padding:.85rem 0;
+    border-bottom:1px solid var(--line);
+    font-size:.95rem;
+  }
+  ul.rows .what{color:var(--ink-2)}
+  ul.rows .what b{color:var(--ink);font-weight:600}
+  ul.rows .when{
+    flex-shrink:0;
+    font-size:.8rem;
+    letter-spacing:.05em;
+    color:var(--ink-4);
+    font-variant-numeric:tabular-nums;
+  }
+
+  .service p{color:var(--ink-2);font-size:.95rem}
+  .service .journals{
+    font-family:var(--serif);
+    font-style:italic;
+    color:var(--ink-3);
+    font-size:.9rem;
+  }
+
+  footer{
+    margin-top:5rem;
+    padding-top:1.6rem;
+    border-top:1px solid var(--line);
+    font-size:.78rem;
+    color:var(--ink-4);
+    line-height:2;
+  }
+  footer a{color:var(--ink-4);text-decoration:none}
+  footer a:hover{color:var(--ink)}
+
+  /* 进场动画 */
+  section, footer{
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .7s var(--ease),transform .7s var(--ease);
+  }
+  section.in, footer.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    section,footer{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* ---------- 移动端 ---------- */
+  @media (max-width:860px){
+    .wrap{grid-template-columns:1fr}
+    aside{
+      border-right:none;
+      border-bottom:1px solid var(--line);
+      padding:3rem 1.5rem 2.2rem;
+    }
+    .side-inner{position:static}
+    nav{display:flex;flex-wrap:wrap;gap:.2rem 1.4rem;margin-top:1.8rem}
+    nav a{padding:.25rem 0}
+    .contact-block{margin-top:1.8rem}
+    main{padding:2.6rem 1.5rem 3rem}
+    ol.pubs li{padding-left:2.6rem}
+    ul.rows li{flex-direction:column;gap:.15rem}
+    ul.rows .when{order:-1}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <aside>
+    <div class="side-inner">
+      <h1 class="name-zh">朱宏佳</h1>
+      <div class="name-en">Hongjia Zhu</div>
+
+      <div class="role">
+        长聘副教授<br>
+        暨南大学 经济与社会研究院<br>
+        <span class="en">Tenured Associate Professor<br>
+        Institute for Economic and Social Research<br>
+        Jinan University</span>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#working">Selected Working Papers</a>
+        <a href="#grants">Grants</a>
+        <a href="#appointments">Appointments</a>
+        <a href="#education">Education</a>
+        <a href="#service">Service</a>
+      </nav>
+
+      <div class="contact-block">
+        Contact: <span class="email-obf">zhuhjecon [at] hotmail [dot] com</span>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+
+    <section id="about" class="intro">
+      <div class="sec-label">About</div>
+      <p>I am a tenured associate professor at the Institute for Economic and Social Research (IESR), Jinan University. My research focuses on urban economics and environmental economics, with a particular emphasis on the intersection of the two fields. My recent work examines the impacts and underlying mechanisms of urban and environmental policies on land markets, firm polluting behavior, and regional environmental quality.</p>
+      <div class="fields">
+        <div class="fields-label">Research Areas</div>
+        <span>Urban Economics</span><span>Environmental Economics</span>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="sec-label">Publications</div>
+      <ol class="pubs">
+        <li>
+          <div class="pub-title">Relative Height and Vertical Status in Buildings</div>
+          <div class="pub-meta">with Danny Ben-Shahar, Yongheng Deng, Eyal Solganik &amp; Tsur Somerville · <span class="journal">Real Estate Economics</span>, 2026, 1–29</div>
+        </li>
+        <li>
+          <div class="pub-title">Moving to Opportunity for Polluting: Intra-city Evidence from China's Land Market</div>
+          <div class="pub-meta">with Shiyu Bo &amp; Fan Zhang · <span class="journal">Journal of Development Economics</span>, 2026, 182: 103810</div>
+        </li>
+        <li>
+          <div class="pub-title">Extreme Weather and Complaints: Evidence from Chinese Netizens</div>
+          <div class="pub-meta">with Yajie Han · <span class="journal">China Economic Journal</span>, 2024, 17(1): 116–136</div>
+        </li>
+        <li>
+          <div class="pub-title">Disguised Pollution: Industrial Activities in the Dark</div>
+          <div class="pub-meta">with Sumit Agarwal, Yajie Han &amp; Yu Qin · <span class="journal">Journal of Public Economics</span>, 2023, 223: 104904</div>
+        </li>
+        <li>
+          <div class="pub-title">The Effect of Targeted Poverty Alleviation Program on Children's Academic Performance in China</div>
+          <div class="pub-meta">with Huifu Nong, Qing Zhang &amp; Rong Zhu · <span class="journal">Review of Income and Wealth</span>, 2022, 68: 951–969</div>
+        </li>
+        <li>
+          <div class="pub-title">Acquiring Land in Cold Winter: Consequences and Possible Explanations</div>
+          <div class="pub-meta">with Yinghao Pan, Yu Qin &amp; Fan Zhang · <span class="journal">Journal of Environmental Economics and Management</span>, 2022, 116: 102721</div>
+        </li>
+        <li>
+          <div class="pub-title">Impact of Temperature on Morbidity: New Evidence from China</div>
+          <div class="pub-meta">with Sumit Agarwal, Yu Qin, Luwen Shi &amp; Guoxu Wei · <span class="journal">Journal of Environmental Economics and Management</span>, 2021, 109: 102495</div>
+        </li>
+        <li>
+          <div class="pub-title">Compensating for Academic Loss: Online Education and Student Performance during the COVID-19 Pandemic</div>
+          <div class="pub-meta">with Andrew E. Clark, Huifu Nong &amp; Rong Zhu · <span class="journal">China Economic Review</span>, 2021, 68: 101629</div>
+          <span class="award">China Economic Review Best Paper Award 2023</span>
+        </li>
+        <li>
+          <div class="pub-title">Can Price Regulation Improve Land Use Intensity? Evidence from Industrial Land Market in China</div>
+          <div class="pub-meta">with Yatang Lin, Yu Qin &amp; Yang Yang · <span class="journal">Regional Science and Urban Economics</span>, 2020, 81: 103501</div>
+        </li>
+        <li>
+          <div class="pub-title">Run Away? Air Pollution and Emigration Interests in China</div>
+          <div class="pub-meta">with Yu Qin · <span class="journal">Journal of Population Economics</span>, 2018, 31: 235–266</div>
+        </li>
+        <li>
+          <div class="pub-title">Fear of Nuclear Power? Evidence from Fukushima Nuclear Accident and Land Market in China</div>
+          <div class="pub-meta">with Yongheng Deng, Xiaobo He &amp; Rong Zhu · <span class="journal">Regional Science and Urban Economics</span>, 2016, 60: 139–154</div>
+        </li>
+        <li>
+          <div class="pub-title">Changes in the Distribution of Land Prices in Urban China during 2007–2012</div>
+          <div class="pub-meta">with Yu Qin &amp; Rong Zhu · <span class="journal">Regional Science and Urban Economics</span>, 2016, 57: 77–90</div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="working">
+      <div class="sec-label">Selected Working Papers</div>
+      <ol class="pubs working">
+        <li>
+          <div class="pub-title">When Trash Becomes Fuel: The Impact of Waste-to-Energy Plants on Open Burning in China</div>
+          <div class="pub-meta">with Huanhuan He &amp; Fan Zhang</div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="grants">
+      <div class="sec-label">Grants</div>
+      <ul class="rows">
+        <li><span class="what">General Program, National Natural Science Foundation of China（国家自然科学基金面上项目）</span><span class="when">2027 – 2030</span></li>
+        <li><span class="what">Young Scientists Fund, Humanities and Social Sciences Research, Ministry of Education of China（教育部人文社会科学研究青年基金项目）</span><span class="when">2026 – 2028</span></li>
+        <li><span class="what">Young Scientists Fund, National Natural Science Foundation of China（国家自然科学基金青年科学基金项目C类）</span><span class="when">2021 – 2023</span></li>
+      </ul>
+    </section>
+
+    <section id="appointments">
+      <div class="sec-label">Appointments</div>
+      <ul class="rows">
+        <li><span class="what">Tenured Associate Professor, Institute for Economic and Social Research, Jinan University</span><span class="when">2023.10 – present</span></li>
+        <li><span class="what">Associate Professor, Institute for Economic and Social Research, Jinan University</span><span class="when">2021.10 – 2023.10</span></li>
+        <li><span class="what">Assistant Professor, Institute for Economic and Social Research, Jinan University</span><span class="when">2016.05 – 2021.09</span></li>
+        <li><span class="what">Postdoctoral Research Fellow, Institute of Real Estate Studies, National University of Singapore</span><span class="when">2014.09 – 2016.05</span></li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <div class="sec-label">Education</div>
+      <ul class="rows">
+        <li><span class="what">Ph.D. in Economics, University of New South Wales</span><span class="when">2014.08</span></li>
+        <li><span class="what">M.A. in Economics, Sun Yat-sen University</span><span class="when">2010.07</span></li>
+        <li><span class="what">B.Sc. in Mathematics and Applied Mathematics, Sun Yat-sen University</span><span class="when">2008.07</span></li>
+      </ul>
+    </section>
+
+    <section id="service" class="service">
+      <div class="sec-label">Service</div>
+      <p>Referee:</p>
+      <p class="journals">China Economic Review, Journal of the Association of Environmental and Resource Economists, Journal of Environmental Economics and Management, Journal of Population Economics, Journal of Public Economics, Journal of Regional Science, Management Science, Real Estate Economics, Regional Science and Urban Economics,《世界经济》, etc.</p>
+    </section>
+
+    <footer>
+      <div>© 2026 Hongjia Zhu 朱宏佳 · Last updated: November 2026</div>
+      <div>Primary site: <a href="https://zhuhjecon.com/" target="_blank" rel="noopener">zhuhjecon.com</a></div>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.08});
+  document.querySelectorAll('section, footer').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
